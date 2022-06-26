@@ -6,52 +6,53 @@
 //  Original author: Lenovo
 ///////////////////////////////////////////////////////////
 
+namespace entidad
+{
+    public class Platinium : Tarjeta
+    {
+
+        public Platinium(string numeroTarjeta, float saldoPesos, float limite)
+        {
+            NumeroTarjeta = numeroTarjeta;
+            Categoria = "Platinum";
+            SaldoPesos = saldoPesos;
+            LimitePesos = limite;
 
 
+        }
 
-using entidad;
-namespace entidad {
-	public class Platinium : Tarjeta {
+        ~Platinium()
+        {
 
-		public Platinium(string numeroTarjeta, float saldoPesos, float limite)
-		{
-			NumeroTarjeta = numeroTarjeta;
-			Categoria = "Platinum";
-			SaldoPesos = saldoPesos;
-			LimitePesos = limite;
-			
+        }
 
-		}
+        public float CalcularGastoAdministrativo()
+        {
 
-		~Platinium(){
+            return 0;
+        }
 
-		}
-
-		public float CalcularGastoAdministrativo(){
-
-			return 0;
-		}
-
-		public override float CalcularGastoAdministrativo(float monto)
-		{
-			if (SaldoPesos>=0)
-			{
-				return (float)(monto * 0.1);
-			}
+        public override float CalcularGastoAdministrativo(float monto)
+        {
+            if (SaldoPesos >= 0)
+            {
+                return (float)(monto * 0.1);
+            }
             else
             {
-				return (float)(monto * 0.2);
+                return (float)(monto * 0.2);
             }
         }
 
-        public float ImpactarMiovimiento(){
+        public float ImpactarMiovimiento()
+        {
 
-			return 0;
-		}
+            return 0;
+        }
 
         public override string Tipo()
         {
-			return Categoria;
+            return Categoria;
 
         }
     }//end Platinium

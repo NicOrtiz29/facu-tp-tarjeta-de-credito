@@ -6,24 +6,24 @@
 //  Original author: Lenovo
 ///////////////////////////////////////////////////////////
 
+namespace entidad
+{
+    public class Deposito : Movimiento
+    {
 
+        public Deposito()
+        {
 
+        }
 
-using entidad;
-namespace entidad {
-	public class Deposito : Movimiento {
+        ~Deposito()
+        {
 
-		public Deposito(){
-
-		}
-
-		~Deposito(){
-
-		}
+        }
 
         public override void actualizarImpuesto(float monto)
         {
-        
+
         }
     }//end Deposito
 

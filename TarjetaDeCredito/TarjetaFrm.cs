@@ -1,11 +1,5 @@
 ﻿using entidad;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TarjetaDeCredito
@@ -49,7 +43,7 @@ namespace TarjetaDeCredito
 
         private void txtNumeroTarjeta_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCrearTarjeta_Click(object sender, EventArgs e)
@@ -68,7 +62,7 @@ namespace TarjetaDeCredito
             float limiteUSD = 1000;// try parse! txtLimite.Text;
 
             Tarjeta tarjeta;
-         if (rbtBlack.Checked)
+            if (rbtBlack.Checked)
             {
                 tarjeta = new Black(numeroTarjeta, 0, limiteARS, 0, limiteUSD);
             }

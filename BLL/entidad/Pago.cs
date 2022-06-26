@@ -5,27 +5,27 @@
 //  Created on:      26-jun.-2022 14:42:03
 ///////////////////////////////////////////////////////////
 
+namespace entidad
+{
+    public class Pago : Movimiento
+    {
+
+        public Pago()
+        {
+
+        }
+
+        ~Pago()
+        {
+
+        }
+
+        public override void actualizarImpuesto(float monto)
+        {
+            Impuesto = (float)(monto * 0.05);
+        }
 
 
-
-using entidad;
-namespace entidad {
-	public class Pago : Movimiento {
-
-		public Pago(){
-
-		}
-
-		~Pago(){
-
-		}
-
-		public override void actualizarImpuesto(float monto)
-		{
-			Impuesto= (float)(monto * 0.05);
-		}
-
-
-	}//end Pago
+    }//end Pago
 
 }//end namespace entidad

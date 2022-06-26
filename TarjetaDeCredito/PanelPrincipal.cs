@@ -2,11 +2,7 @@
 using entidad;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TarjetaDeCredito
@@ -14,7 +10,7 @@ namespace TarjetaDeCredito
     public partial class PanelPrincipal : Form
     {
 
-        Cliente clienteActivo=null;
+        Cliente clienteActivo = null;
         TarjetaFrm tarjetaSeleccionada = null;
 
         public PanelPrincipal()
@@ -41,12 +37,12 @@ namespace TarjetaDeCredito
             form.Cliente = clienteActivo;
             form.PanelForm = this;
             form.ShowDialog();
-            
+
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
@@ -68,9 +64,9 @@ namespace TarjetaDeCredito
 
                 if (dni == cliente.Dni)
                 {
-                    clienteActivo= cliente;
+                    clienteActivo = cliente;
                     break;
-                }             
+                }
 
             }
             actualizarSeccionTarjetas();
@@ -99,7 +95,7 @@ namespace TarjetaDeCredito
                 dr[5] = tarjeta.NumeroTarjeta;
                 dt.Rows.Add(dr);
 
-               
+
             }
 
             dgvClientes.DataSource = dt;
@@ -107,7 +103,7 @@ namespace TarjetaDeCredito
 
             btnAltaTarjeta.Enabled = true;
 
-            }
+        }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
@@ -134,6 +130,6 @@ namespace TarjetaDeCredito
             actualizarSeccionTarjetas();
         }
 
-        
+
     }
 }

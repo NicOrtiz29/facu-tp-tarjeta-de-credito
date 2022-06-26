@@ -6,27 +6,26 @@
 //  Original author: Lenovo
 ///////////////////////////////////////////////////////////
 
+namespace entidad
+{
+    public abstract class Movimiento
+    {
+
+        public float Impuesto;
+        public string Moneda;
+        public float Monto;
+        public string Concepto;
+        public entidad.Tarjeta m_Tarjeta;
 
 
 
-using entidad;
-namespace entidad {
-	public abstract class Movimiento {
+        ~Movimiento()
+        {
 
-		public float Impuesto;
-		public string Moneda;
-		public float Monto;
-		public string Concepto;
-		public entidad.Tarjeta m_Tarjeta;
+        }
 
-        
+        public abstract void actualizarImpuesto(float monto);
 
-        ~Movimiento(){
-
-		}
-
-		public abstract void actualizarImpuesto(float monto);
-
-	}//end Movimiento
+    }//end Movimiento
 
 }//end namespace entidad

@@ -1,19 +1,13 @@
 ﻿using BLL;
 using entidad;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TarjetaDeCredito
 {
     public partial class Movimientosfrm : Form
     {
-        float impuesto=0;
+        float impuesto = 0;
         private Cliente ClienteActivo;
         private entidad.Tarjeta Tarjeta;
 
@@ -32,7 +26,7 @@ namespace TarjetaDeCredito
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -65,10 +59,10 @@ namespace TarjetaDeCredito
                     movimiento = new Pago();
                     break;
             }
-            
+
 
             comboBox1.Items.Add("ARS");
-            
+
             if (Tarjeta.Tipo() == "Black")
             {
                 comboBox1.Items.Add("USD");
@@ -83,13 +77,13 @@ namespace TarjetaDeCredito
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
             float monto = 100;// tryparse! textBox2.Text);
 
             float gastosAdministrativos = 0;
             if (accion == "comprar")
-            { 
-            gastosAdministrativos=Tarjeta.CalcularGastoAdministrativo(monto);
+            {
+                gastosAdministrativos = Tarjeta.CalcularGastoAdministrativo(monto);
             }
 
             movimiento.Monto = monto;
@@ -98,13 +92,13 @@ namespace TarjetaDeCredito
             textBox3.Text = "" + gastosAdministrativos + "";
 
             float total = monto + gastosAdministrativos;
-            textBox4.Text = ""+total+"";
+            textBox4.Text = "" + total + "";
             movimiento.Monto = total;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
             movimiento.Concepto = textBox1.Text;
 
         }

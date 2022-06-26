@@ -8,29 +8,33 @@
 
 
 
-namespace entidad {
-	public abstract class Tarjeta {
+namespace entidad
+{
+    public abstract class Tarjeta
+    {
 
-		public string NumeroTarjeta;
-		public string Categoria;
-		public float SaldoPesos;
-		public float LimitePesos;
-		public float SaldoUSD;
-		public float LimiteUSD;
-		abstract public string Tipo();
-    
+        public string NumeroTarjeta;
+        public string Categoria;
+        public float SaldoPesos;
+        public float LimitePesos;
+        public float SaldoUSD;
+        public float LimiteUSD;
+        abstract public string Tipo();
 
-        ~Tarjeta(){
 
-		}
+        ~Tarjeta()
+        {
 
-		public abstract float CalcularGastoAdministrativo(float monto);
+        }
 
-		public float ImpactarMiovimiento(){
+        public abstract float CalcularGastoAdministrativo(float monto);
 
-			return 0;
-		}
+        public float ImpactarMiovimiento()
+        {
 
-	}//end Tarjeta
+            return 0;
+        }
+
+    }//end Tarjeta
 
 }//end namespace entidad

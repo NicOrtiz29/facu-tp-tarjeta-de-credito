@@ -6,12 +6,10 @@
 //  Original author: Lenovo
 ///////////////////////////////////////////////////////////
 
-
-
-
-using entidad;
-namespace entidad {
-	public class Compra : Movimiento {
+namespace entidad
+{
+    public class Compra : Movimiento
+    {
         public Compra(Tarjeta tarjeta)
         {
 
@@ -19,13 +17,14 @@ namespace entidad {
         }
 
 
-        ~Compra(){
+        ~Compra()
+        {
 
-		}
+        }
 
         public override void actualizarImpuesto(float monto)
         {
-         
+
         }
     }//end Compra
 

@@ -1,8 +1,4 @@
 ﻿using entidad;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BLL
 {
@@ -16,8 +12,9 @@ namespace BLL
                 {
                     throw new LimiteNoAlcanzaException("Limite insuficiente");
                 }
-                else { 
-                tarjeta.SaldoPesos-=compra.Monto;
+                else
+                {
+                    tarjeta.SaldoPesos -= compra.Monto;
                 }
             }
             else
@@ -29,7 +26,7 @@ namespace BLL
                 }
                 else
                 {
-                    tarjeta.SaldoUSD-= compra.Monto;
+                    tarjeta.SaldoUSD -= compra.Monto;
                 }
 
             }
