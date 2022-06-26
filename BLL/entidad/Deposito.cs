@@ -21,6 +21,10 @@ namespace entidad {
 
 		}
 
-	}//end Deposito
+        public override void actualizarImpuesto(float monto)
+        {
+        
+        }
+    }//end Deposito
 
 }//end namespace entidad

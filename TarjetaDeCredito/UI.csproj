@@ -44,20 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Movimientosfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientosfrm.Designer.cs">
+      <DependentUpon>Movimientosfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PanelPrincipal.Designer.cs">
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tarjeta.cs">
+    <Compile Include="TarjetaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tarjeta.Designer.cs">
-      <DependentUpon>Tarjeta.cs</DependentUpon>
+    <Compile Include="TarjetaFrm.Designer.cs">
+      <DependentUpon>TarjetaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Movimientosfrm.resx">
+      <DependentUpon>Movimientosfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PanelPrincipal.resx">
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,8 +79,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tarjeta.resx">
-      <DependentUpon>Tarjeta.cs</DependentUpon>
+    <EmbeddedResource Include="TarjetaFrm.resx">
+      <DependentUpon>TarjetaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -32,7 +32,19 @@ namespace entidad {
 			return 0;
 		}
 
-		public float ImpactarMiovimiento(){
+		public override float CalcularGastoAdministrativo(float monto)
+		{
+			if (SaldoPesos>=0)
+			{
+				return (float)(monto * 0.1);
+			}
+            else
+            {
+				return (float)(monto * 0.2);
+            }
+        }
+
+        public float ImpactarMiovimiento(){
 
 			return 0;
 		}

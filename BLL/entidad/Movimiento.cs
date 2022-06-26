@@ -13,18 +13,19 @@ using entidad;
 namespace entidad {
 	public abstract class Movimiento {
 
-		private float Impuesto;
-		private string Moneda;
-		private float Monto;
+		public float Impuesto;
+		public string Moneda;
+		public float Monto;
+		public string Concepto;
 		public entidad.Tarjeta m_Tarjeta;
 
-		public Movimiento(){
+        
+
+        ~Movimiento(){
 
 		}
 
-		~Movimiento(){
-
-		}
+		public abstract void actualizarImpuesto(float monto);
 
 	}//end Movimiento
 

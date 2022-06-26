@@ -55,6 +55,7 @@
             this.btnComprar.TabIndex = 2;
             this.btnComprar.Text = "Realizar una Compra";
             this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // btnAltaTarjeta
             // 
@@ -84,6 +85,7 @@
             this.btnPago.TabIndex = 5;
             this.btnPago.Text = "Realizar un Pago";
             this.btnPago.UseVisualStyleBackColor = true;
+            this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
             // 
             // label1
             // 

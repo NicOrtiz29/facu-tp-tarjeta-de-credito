@@ -32,7 +32,12 @@ namespace entidad {
 			return 0;
 		}
 
-		public float ImpactarMiovimiento(){
+        public override float CalcularGastoAdministrativo(float monto)
+        {
+			return (float)(monto * 0.01);
+        }
+
+        public float ImpactarMiovimiento(){
 
 			return 0;
 		}

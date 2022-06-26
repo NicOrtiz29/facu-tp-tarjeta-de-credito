@@ -13,6 +13,10 @@ namespace TarjetaDeCredito
 {
     public partial class PanelPrincipal : Form
     {
+
+        Cliente clienteActivo=null;
+        TarjetaFrm tarjetaSeleccionada = null;
+
         public PanelPrincipal()
         {
             InitializeComponent();
@@ -33,8 +37,11 @@ namespace TarjetaDeCredito
 
         private void btnAltaTarjeta_Click(object sender, EventArgs e)
         {
-            new Tarjeta().Show();
-            this.Close();
+            TarjetaFrm form = new TarjetaFrm();
+            form.Cliente = clienteActivo;
+            form.PanelForm = this;
+            form.ShowDialog();
+            
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,23 +61,23 @@ namespace TarjetaDeCredito
 
             List<Cliente> clientes = ClientesHardCod.CrearCliente();
 
-            Cliente clienteEncontrado = null;
+
 
             foreach (Cliente cliente in clientes)
             {
 
                 if (dni == cliente.Dni)
                 {
-                    clienteEncontrado = cliente;
+                    clienteActivo= cliente;
                     break;
                 }             
 
             }
-            actualizarSeccionTarjetas(clienteEncontrado);
+            actualizarSeccionTarjetas();
 
         }
 
-        private void actualizarSeccionTarjetas(Cliente clienteEncontrado)
+        private void actualizarSeccionTarjetas()
         {
             dgvClientes.Columns.Clear();
             DataTable dt = new DataTable();
@@ -81,7 +88,7 @@ namespace TarjetaDeCredito
             dt.Columns.Add(new DataColumn("LimiteUSD"));
             dt.Columns.Add(new DataColumn("Numero de Tarjeta"));
 
-            foreach (entidad.Tarjeta tarjeta in clienteEncontrado.Tarjetas)
+            foreach (entidad.Tarjeta tarjeta in clienteActivo.Tarjetas)
             {
                 DataRow dr = dt.NewRow();
                 dr[0] = tarjeta.Tipo();
@@ -101,5 +108,32 @@ namespace TarjetaDeCredito
             btnAltaTarjeta.Enabled = true;
 
             }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            abrirPantallaMovimiento("comprar");
+        }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            abrirPantallaMovimiento("pagar");
+        }
+
+        private void abrirPantallaMovimiento(string accion)
+        {
+            Movimientosfrm form = new Movimientosfrm();
+
+            form.Cliente(clienteActivo, clienteActivo.Tarjetas[dgvClientes.CurrentRow.Index]);
+            form.accion = accion;
+            form.ShowDialog();
+        }
+
+        public void actualizarPanel(Cliente cliente)
+        {
+            clienteActivo = cliente;
+            actualizarSeccionTarjetas();
+        }
+
+        
     }
 }

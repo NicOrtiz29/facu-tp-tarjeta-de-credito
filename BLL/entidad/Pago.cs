@@ -20,6 +20,12 @@ namespace entidad {
 
 		}
 
+		public override void actualizarImpuesto(float monto)
+		{
+			Impuesto= (float)(monto * 0.05);
+		}
+
+
 	}//end Pago
 
 }//end namespace entidad

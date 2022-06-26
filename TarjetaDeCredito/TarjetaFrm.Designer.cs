@@ -1,6 +1,6 @@
 ﻿namespace TarjetaDeCredito
 {
-    partial class Tarjeta
+    partial class TarjetaFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.btnCrearTarjeta.TabIndex = 0;
             this.btnCrearTarjeta.Text = "Generar Tarjeta";
             this.btnCrearTarjeta.UseVisualStyleBackColor = true;
+            this.btnCrearTarjeta.Click += new System.EventHandler(this.btnCrearTarjeta_Click);
             // 
             // lblNumeroDeTarjeta
             // 
@@ -77,7 +78,7 @@
             // lblLimiteARS
             // 
             this.lblLimiteARS.AutoSize = true;
-            this.lblLimiteARS.Location = new System.Drawing.Point(369, 304);
+            this.lblLimiteARS.Location = new System.Drawing.Point(42, 310);
             this.lblLimiteARS.Name = "lblLimiteARS";
             this.lblLimiteARS.Size = new System.Drawing.Size(73, 16);
             this.lblLimiteARS.TabIndex = 4;
@@ -89,6 +90,7 @@
             this.txtNumeroTarjeta.Name = "txtNumeroTarjeta";
             this.txtNumeroTarjeta.Size = new System.Drawing.Size(277, 22);
             this.txtNumeroTarjeta.TabIndex = 5;
+            this.txtNumeroTarjeta.TextChanged += new System.EventHandler(this.txtNumeroTarjeta_TextChanged);
             // 
             // txtLimite
             // 
@@ -124,7 +126,7 @@
             // lblLimiteUSD
             // 
             this.lblLimiteUSD.AutoSize = true;
-            this.lblLimiteUSD.Location = new System.Drawing.Point(39, 304);
+            this.lblLimiteUSD.Location = new System.Drawing.Point(421, 307);
             this.lblLimiteUSD.Name = "lblLimiteUSD";
             this.lblLimiteUSD.Size = new System.Drawing.Size(74, 16);
             this.lblLimiteUSD.TabIndex = 9;
@@ -150,6 +152,7 @@
             this.rbtBlack.TabStop = true;
             this.rbtBlack.Text = "Black";
             this.rbtBlack.UseVisualStyleBackColor = true;
+            this.rbtBlack.CheckedChanged += new System.EventHandler(this.rbtBlack_CheckedChanged);
             // 
             // rbtPlatinum
             // 
@@ -161,6 +164,7 @@
             this.rbtPlatinum.TabStop = true;
             this.rbtPlatinum.Text = "Platinum";
             this.rbtPlatinum.UseVisualStyleBackColor = true;
+            this.rbtPlatinum.CheckedChanged += new System.EventHandler(this.rbtPlatinum_CheckedChanged);
             // 
             // label3
             // 
@@ -190,7 +194,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // Tarjeta
+            // TarjetaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +215,7 @@
             this.Controls.Add(this.lblNumeroDeTarjeta);
             this.Controls.Add(this.btnCrearTarjeta);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Tarjeta";
+            this.Name = "TarjetaFrm";
             this.Text = "AltaTarjeta";
             this.Load += new System.EventHandler(this.Tarjeta_Load);
             this.ResumeLayout(false);

@@ -12,15 +12,21 @@
 using entidad;
 namespace entidad {
 	public class Compra : Movimiento {
+        public Compra(Tarjeta tarjeta)
+        {
 
-		public Compra(){
+            m_Tarjeta = tarjeta;
+        }
+
+
+        ~Compra(){
 
 		}
 
-		~Compra(){
-
-		}
-
-	}//end Compra
+        public override void actualizarImpuesto(float monto)
+        {
+         
+        }
+    }//end Compra
 
 }//end namespace entidad

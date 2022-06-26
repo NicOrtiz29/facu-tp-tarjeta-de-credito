@@ -24,10 +24,7 @@ namespace entidad {
 
 		}
 
-		public float CalcularGastoAdministrativo(){
-
-			return 0;
-		}
+		public abstract float CalcularGastoAdministrativo(float monto);
 
 		public float ImpactarMiovimiento(){
 
