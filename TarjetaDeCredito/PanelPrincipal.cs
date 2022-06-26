@@ -24,7 +24,7 @@ namespace TarjetaDeCredito
 
             foreach (Cliente cliente in clientes)
             {
-                comboBox1.Items.Add(cliente.Nombre + " " + cliente.Apellido + " (" + cliente.Dni + ")");
+                comboBox1.Items.Add(cliente.Dni);
 
 
             }
@@ -39,7 +39,7 @@ namespace TarjetaDeCredito
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
 
         }
 
@@ -50,7 +50,56 @@ namespace TarjetaDeCredito
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string dni = comboBox1.Text;
+
+            List<Cliente> clientes = ClientesHardCod.CrearCliente();
+
+            Cliente clienteEncontrado = null;
+
+            foreach (Cliente cliente in clientes)
+            {
+
+                if (dni == cliente.Dni)
+                {
+                    clienteEncontrado = cliente;
+                    break;
+                }             
+
+            }
+            actualizarSeccionTarjetas(clienteEncontrado);
 
         }
+
+        private void actualizarSeccionTarjetas(Cliente clienteEncontrado)
+        {
+            dgvClientes.Columns.Clear();
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Tipo"));
+            dt.Columns.Add(new DataColumn("SaldoARS"));
+            dt.Columns.Add(new DataColumn("LimiteARS"));
+            dt.Columns.Add(new DataColumn("SaldoUSD"));
+            dt.Columns.Add(new DataColumn("LimiteUSD"));
+            dt.Columns.Add(new DataColumn("Numero de Tarjeta"));
+
+            foreach (entidad.Tarjeta tarjeta in clienteEncontrado.Tarjetas)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = tarjeta.Tipo();
+                dr[1] = tarjeta.SaldoPesos;
+                dr[2] = tarjeta.LimitePesos;
+                dr[3] = tarjeta.SaldoUSD;
+                dr[4] = tarjeta.LimiteUSD;
+                dr[5] = tarjeta.NumeroTarjeta;
+                dt.Rows.Add(dr);
+
+               
+            }
+
+            dgvClientes.DataSource = dt;
+
+
+            btnAltaTarjeta.Enabled = true;
+
+            }
     }
 }

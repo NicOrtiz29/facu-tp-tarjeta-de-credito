@@ -18,7 +18,7 @@ namespace entidad {
 			NumeroTarjeta = numeroTarjeta;
 			Categoria = "Platinum";
 			SaldoPesos = saldoPesos;
-			Limite = limite;
+			LimitePesos = limite;
 			
 
 		}
@@ -37,6 +37,11 @@ namespace entidad {
 			return 0;
 		}
 
-	}//end Platinium
+        public override string Tipo()
+        {
+			return Categoria;
+
+        }
+    }//end Platinium
 
 }//end namespace entidad

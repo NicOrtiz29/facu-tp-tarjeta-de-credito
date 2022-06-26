@@ -11,15 +11,13 @@ using entidad;
 namespace entidad {
 	public class Black : Tarjeta {
 
-		private float SaldoUSD;
-        private float LimiteUSD;
-
+		
         public Black(string numeroTarjeta, float saldoPesos, float limite, float saldoUSD,float limiteUSD)
 		{
 			NumeroTarjeta = numeroTarjeta;
 			Categoria = "Black";
 			SaldoPesos = saldoPesos;
-			Limite = limite;
+			LimitePesos = limite;
 			SaldoUSD = saldoUSD;
 			LimiteUSD = limiteUSD;
 
@@ -39,6 +37,10 @@ namespace entidad {
 			return 0;
 		}
 
-	}//end Black
+        public override string Tipo()
+        {
+			return Categoria;
+        }
+    }//end Black
 
 }//end namespace entidad

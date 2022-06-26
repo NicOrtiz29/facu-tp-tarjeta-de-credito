@@ -11,12 +11,14 @@
 namespace entidad {
 	public abstract class Tarjeta {
 
-		protected string NumeroTarjeta;
-		protected string Categoria;
-		protected float SaldoPesos;
-		protected float Limite;
-
-      
+		public string NumeroTarjeta;
+		public string Categoria;
+		public float SaldoPesos;
+		public float LimitePesos;
+		public float SaldoUSD;
+		public float LimiteUSD;
+		abstract public string Tipo();
+    
 
         ~Tarjeta(){
 
