@@ -130,6 +130,10 @@ namespace TarjetaDeCredito
             actualizarSeccionTarjetas();
         }
 
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            abrirPantallaMovimiento("depositar");
 
+        }
     }
 }

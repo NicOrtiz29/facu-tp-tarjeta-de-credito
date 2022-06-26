@@ -60,7 +60,7 @@
             // btnAltaTarjeta
             // 
             this.btnAltaTarjeta.Enabled = false;
-            this.btnAltaTarjeta.Location = new System.Drawing.Point(1030, 197);
+            this.btnAltaTarjeta.Location = new System.Drawing.Point(922, 197);
             this.btnAltaTarjeta.Name = "btnAltaTarjeta";
             this.btnAltaTarjeta.Size = new System.Drawing.Size(128, 40);
             this.btnAltaTarjeta.TabIndex = 3;
@@ -76,6 +76,7 @@
             this.btnDeposito.TabIndex = 4;
             this.btnDeposito.Text = "Realizar un Deposito";
             this.btnDeposito.UseVisualStyleBackColor = true;
+            this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
             // 
             // btnPago
             // 
@@ -123,7 +124,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(1006, 220);
+            this.dgvClientes.Size = new System.Drawing.Size(838, 220);
             this.dgvClientes.TabIndex = 2;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -202,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 736);
+            this.ClientSize = new System.Drawing.Size(1094, 686);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

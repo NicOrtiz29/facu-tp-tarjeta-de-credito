@@ -65,6 +65,10 @@ namespace TarjetaDeCredito
                 case "pagar":
                     movimiento = new Pago();
                     break;
+                case "depositar":
+                    movimiento = new Deposito();
+                    break;
+
             }
 
 
