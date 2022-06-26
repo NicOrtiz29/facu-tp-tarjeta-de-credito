@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using entidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,14 @@ namespace TarjetaDeCredito
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            List<Cliente> clientes = ClientesHardCod.CrearCliente();
+
+            foreach (Cliente cliente in clientes)
+            {
+                comboBox1.Items.Add(cliente.Nombre + " " + cliente.Apellido + " (" + cliente.Dni + ")");
+
+
+            }
 
         }
 
@@ -38,5 +48,9 @@ namespace TarjetaDeCredito
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

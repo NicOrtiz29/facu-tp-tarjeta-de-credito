@@ -13,7 +13,13 @@ using entidad;
 namespace entidad {
 	public class Platinium : Tarjeta {
 
-		public Platinium(){
+		public Platinium(string numeroTarjeta, float saldoPesos, float limite)
+		{
+			NumeroTarjeta = numeroTarjeta;
+			Categoria = "Platinum";
+			SaldoPesos = saldoPesos;
+			Limite = limite;
+			
 
 		}
 
