@@ -35,7 +35,14 @@ namespace TarjetaDeCredito
 
             try
             {
-                new ComprasManager().HacerCompra(movimiento, Tarjeta);
+                if (accion == "comprar")
+                {
+                    new MovimientosManager().HacerCompra(movimiento, Tarjeta);
+                }else if (accion == "pagar")
+                {
+                    new MovimientosManager().HacerPago(movimiento, Tarjeta);
+                }
+                
             }
             catch (LimiteNoAlcanzaException)
             {

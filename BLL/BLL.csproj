@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientesHardCod.cs" />
-    <Compile Include="ComprasManager.cs" />
+    <Compile Include="MovimientosManager.cs" />
     <Compile Include="entidad\Black.cs" />
     <Compile Include="entidad\Cliente.cs" />
     <Compile Include="entidad\Compra.cs" />
